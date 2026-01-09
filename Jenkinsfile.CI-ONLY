@@ -1,0 +1,393 @@
+pipeline {
+    agent any
+    
+    tools {
+        maven 'Maven-3.9.11' // Match your Jenkins Maven installation name
+        jdk 'JDK-11'         // Match your Jenkins JDK installation name
+    }
+    
+    environment {
+        PROJECT_NAME = 'MLX_API_Automation'
+        MAVEN_OPTS = '-Xmx1024m'
+        
+        // Email settings
+        EMAIL_RECIPIENTS = 'your-email@example.com' // UPDATE THIS
+        
+        // Report paths
+        EXTENT_REPORT_PATH = 'test-output/ExtentReports/'
+        SUREFIRE_REPORT_PATH = 'target/surefire-reports/'
+        
+        // SAFETY: Deployment is DISABLED
+        DEPLOY_ENABLED = 'false'
+    }
+    
+    parameters {
+        choice(
+            name: 'TEST_ENVIRONMENT',
+            choices: ['staging', 'dev'],
+            description: 'Which environment to test against?'
+        )
+        booleanParam(
+            name: 'SKIP_TESTS',
+            defaultValue: false,
+            description: 'Skip running tests (for quick builds)'
+        )
+        booleanParam(
+            name: 'SEND_EMAIL',
+            defaultValue: true,
+            description: 'Send email notification after build'
+        )
+    }
+    
+    stages {
+        stage('🔍 Checkout Code') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Checking out MLX API Automation Tests"
+                    echo "========================================="
+                    checkout scm
+                    
+                    // Display build info
+                    echo "Build Number: ${env.BUILD_NUMBER}"
+                    echo "Branch: ${env.GIT_BRANCH}"
+                    echo "Test Environment: ${params.TEST_ENVIRONMENT}"
+                }
+            }
+        }
+        
+        stage('🧹 Clean Workspace') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Cleaning Previous Build Artifacts"
+                    echo "========================================="
+                    bat 'mvn clean'
+                }
+            }
+        }
+        
+        stage('🔨 Compile') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Compiling Test Framework"
+                    echo "========================================="
+                    bat 'mvn compile'
+                }
+            }
+        }
+        
+        stage('🧪 Run API Tests') {
+            when {
+                expression { params.SKIP_TESTS == false }
+            }
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Running API Automation Tests"
+                    echo "  Environment: ${params.TEST_ENVIRONMENT}"
+                    echo "========================================="
+                    
+                    try {
+                        // Run tests against selected environment
+                        bat "mvn test -Denv=${params.TEST_ENVIRONMENT}"
+                    } catch (Exception e) {
+                        echo "⚠️ Some tests failed - marking build as UNSTABLE"
+                        currentBuild.result = 'UNSTABLE'
+                    }
+                }
+            }
+        }
+        
+        stage('📊 Generate & Publish Reports') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Publishing Test Reports"
+                    echo "========================================="
+                    
+                    // Publish JUnit/TestNG XML reports
+                    junit allowEmptyResults: true, 
+                          testResults: '**/target/surefire-reports/*.xml',
+                          healthScaleFactor: 1.0
+                    
+                    // Publish Extent HTML Reports
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'test-output/ExtentReports',
+                        reportFiles: '*.html',
+                        reportName: 'MLX API Test Report (Highlighted Orders)',
+                        reportTitles: 'MLX Order API Test Results'
+                    ])
+                    
+                    // Archive test artifacts
+                    archiveArtifacts artifacts: '**/test-output/ExtentReports/*.html', 
+                                     fingerprint: true,
+                                     allowEmptyArchive: true
+                    
+                    echo "✅ Reports published successfully"
+                    echo "   - Extent Report: Click 'MLX API Test Report' link"
+                    echo "   - JUnit Report: Click 'Test Result' link"
+                }
+            }
+        }
+        
+        stage('🚫 Deployment (DISABLED)') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  ⚠️  DEPLOYMENT STAGE - DISABLED"
+                    echo "========================================="
+                    echo ""
+                    echo "🔒 Continuous Deployment is DISABLED for safety"
+                    echo ""
+                    echo "This is a CI-ONLY pipeline that:"
+                    echo "  ✅ Runs automated tests"
+                    echo "  ✅ Generates reports"
+                    echo "  ✅ Notifies team"
+                    echo "  ❌ Does NOT deploy code"
+                    echo ""
+                    echo "To enable deployment later:"
+                    echo "  1. Update DEPLOY_ENABLED to 'true'"
+                    echo "  2. Add deployment credentials"
+                    echo "  3. Configure deployment scripts"
+                    echo "  4. Test in non-production first"
+                    echo ""
+                    echo "Current Status: DEPLOYMENT SKIPPED ✓"
+                    echo "========================================="
+                }
+            }
+        }
+        
+        stage('📈 Test Analysis') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Test Execution Summary"
+                    echo "========================================="
+                    
+                    // Get test results
+                    def testResults = currentBuild.rawBuild.getAction(hudson.tasks.junit.TestResultAction.class)
+                    
+                    if (testResults != null) {
+                        echo "Total Tests: ${testResults.totalCount}"
+                        echo "Passed: ${testResults.totalCount - testResults.failCount - testResults.skipCount}"
+                        echo "Failed: ${testResults.failCount}"
+                        echo "Skipped: ${testResults.skipCount}"
+                        echo "Pass Rate: ${((testResults.totalCount - testResults.failCount) / testResults.totalCount * 100).round(2)}%"
+                    } else {
+                        echo "No test results available"
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            script {
+                echo "========================================="
+                echo "  Build Completed"
+                echo "========================================="
+                echo "Job: ${env.JOB_NAME}"
+                echo "Build: #${env.BUILD_NUMBER}"
+                echo "Status: ${currentBuild.currentResult}"
+                echo "Duration: ${currentBuild.durationString}"
+            }
+        }
+        
+        success {
+            script {
+                echo "✅ Build successful!"
+                
+                if (params.SEND_EMAIL) {
+                    emailext(
+                        subject: "✅ SUCCESS: MLX API Tests - Build #${env.BUILD_NUMBER}",
+                        body: """
+                            <html>
+                            <body style="font-family: Arial, sans-serif; padding: 20px;">
+                                <div style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); padding: 20px; border-radius: 8px;">
+                                    <h2 style="color: white; margin: 0;">✅ Build Successful</h2>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                                    <h3>Build Information</h3>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr><td style="padding: 8px;"><strong>Project:</strong></td><td>${env.JOB_NAME}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Build Number:</strong></td><td>#${env.BUILD_NUMBER}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Environment:</strong></td><td>${params.TEST_ENVIRONMENT}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Status:</strong></td><td><span style="color: green; font-weight: bold;">SUCCESS ✓</span></td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Duration:</strong></td><td>${currentBuild.durationString}</td></tr>
+                                    </table>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <h3>📊 View Reports</h3>
+                                    <p>
+                                        <a href="${env.BUILD_URL}MLX_API_Test_Report_28Highlighted_Orders_29/" 
+                                           style="display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 5px;">
+                                            View Extent Report (with Highlighted Orders)
+                                        </a>
+                                        <a href="${env.BUILD_URL}testReport/" 
+                                           style="display: inline-block; padding: 10px 20px; background: #28a745; color: white; text-decoration: none; border-radius: 5px; margin: 5px;">
+                                            View Test Results
+                                        </a>
+                                        <a href="${env.BUILD_URL}console" 
+                                           style="display: inline-block; padding: 10px 20px; background: #6c757d; color: white; text-decoration: none; border-radius: 5px; margin: 5px;">
+                                            View Console Output
+                                        </a>
+                                    </p>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 15px; background: #d4edda; border-left: 4px solid #28a745; border-radius: 4px;">
+                                    <p style="margin: 0;"><strong>✓ All tests passed successfully!</strong></p>
+                                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #155724;">
+                                        The API automation tests completed without errors.
+                                    </p>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+                                    <p style="margin: 0;"><strong>🔒 Deployment Status: DISABLED</strong></p>
+                                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #856404;">
+                                        This is a CI-ONLY build. No deployment was performed.
+                                    </p>
+                                </div>
+                                
+                                <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
+                                
+                                <p style="font-size: 12px; color: #6c757d;">
+                                    This is an automated message from Jenkins CI Pipeline.<br>
+                                    Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>
+                                </p>
+                            </body>
+                            </html>
+                        """,
+                        mimeType: 'text/html',
+                        to: "${env.EMAIL_RECIPIENTS}",
+                        attachLog: false
+                    )
+                }
+            }
+        }
+        
+        failure {
+            script {
+                echo "❌ Build failed!"
+                
+                if (params.SEND_EMAIL) {
+                    emailext(
+                        subject: "❌ FAILURE: MLX API Tests - Build #${env.BUILD_NUMBER}",
+                        body: """
+                            <html>
+                            <body style="font-family: Arial, sans-serif; padding: 20px;">
+                                <div style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); padding: 20px; border-radius: 8px;">
+                                    <h2 style="color: white; margin: 0;">❌ Build Failed</h2>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                                    <h3>Build Information</h3>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr><td style="padding: 8px;"><strong>Project:</strong></td><td>${env.JOB_NAME}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Build Number:</strong></td><td>#${env.BUILD_NUMBER}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Environment:</strong></td><td>${params.TEST_ENVIRONMENT}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Status:</strong></td><td><span style="color: red; font-weight: bold;">FAILURE ✗</span></td></tr>
+                                    </table>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 15px; background: #f8d7da; border-left: 4px solid #dc3545; border-radius: 4px;">
+                                    <p style="margin: 0;"><strong>⚠️ Action Required</strong></p>
+                                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #721c24;">
+                                        The build failed. Please check the console output for details.
+                                    </p>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <a href="${env.BUILD_URL}console" 
+                                       style="display: inline-block; padding: 12px 24px; background: #dc3545; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                                        View Console Output
+                                    </a>
+                                </div>
+                                
+                                <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
+                                
+                                <p style="font-size: 12px; color: #6c757d;">
+                                    This is an automated message from Jenkins CI Pipeline.<br>
+                                    Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>
+                                </p>
+                            </body>
+                            </html>
+                        """,
+                        mimeType: 'text/html',
+                        to: "${env.EMAIL_RECIPIENTS}",
+                        attachLog: true
+                    )
+                }
+            }
+        }
+        
+        unstable {
+            script {
+                echo "⚠️ Build unstable (some tests failed)"
+                
+                if (params.SEND_EMAIL) {
+                    emailext(
+                        subject: "⚠️ UNSTABLE: MLX API Tests - Build #${env.BUILD_NUMBER}",
+                        body: """
+                            <html>
+                            <body style="font-family: Arial, sans-serif; padding: 20px;">
+                                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 8px;">
+                                    <h2 style="color: white; margin: 0;">⚠️ Build Unstable</h2>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                                    <h3>Build Information</h3>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr><td style="padding: 8px;"><strong>Project:</strong></td><td>${env.JOB_NAME}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Build Number:</strong></td><td>#${env.BUILD_NUMBER}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Environment:</strong></td><td>${params.TEST_ENVIRONMENT}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Status:</strong></td><td><span style="color: orange; font-weight: bold;">UNSTABLE ⚠</span></td></tr>
+                                    </table>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+                                    <p style="margin: 0;"><strong>ℹ️ Some Tests Failed</strong></p>
+                                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #856404;">
+                                        The build completed but some tests failed. Check the test reports for details.
+                                    </p>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <h3>📊 View Reports</h3>
+                                    <p>
+                                        <a href="${env.BUILD_URL}MLX_API_Test_Report_28Highlighted_Orders_29/" 
+                                           style="display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 5px;">
+                                            View Extent Report
+                                        </a>
+                                        <a href="${env.BUILD_URL}testReport/" 
+                                           style="display: inline-block; padding: 10px 20px; background: #ffc107; color: #212529; text-decoration: none; border-radius: 5px; margin: 5px;">
+                                            View Failed Tests
+                                        </a>
+                                    </p>
+                                </div>
+                                
+                                <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
+                                
+                                <p style="font-size: 12px; color: #6c757d;">
+                                    This is an automated message from Jenkins CI Pipeline.<br>
+                                    Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>
+                                </p>
+                            </body>
+                            </html>
+                        """,
+                        mimeType: 'text/html',
+                        to: "${env.EMAIL_RECIPIENTS}",
+                        attachLog: true
+                    )
+                }
+            }
+        }
+    }
+}
