@@ -1,0 +1,4 @@
+com\mlx\api\base\BaseTest.class
+com\mlx\api\tests\APIFlowExampleTest.class
+com\mlx\api\tests\MLXCreateOrderTest.class
+com\mlx\api\tests\MLXLoginTest.class

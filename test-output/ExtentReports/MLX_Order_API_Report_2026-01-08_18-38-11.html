@@ -1,0 +1,1270 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>MLX Order API Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">MLX Order Creation API Test Results</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jan 08, 2026 18:38:11</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Standing Order - Valid Data</p>
+            <p class="text-sm">
+              <span>6:38:15 pm</span> / <span>00:00:01:169</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create Standing Order - Valid Data</h5>
+<span class='badge badge-success'>01.08.2026 6:38:15 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:16 pm</span>
+<span class='badge badge-default'>00:00:01:169</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that a standing order can be created successfully with valid data</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Base URI: https://staging-api-mlx.labsquire.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Test Email: automationtesting@test.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Application Type: web
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Generated Patient: Carlo Bailey
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Patient Email: carlo.bailey@test.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Patient Phone: 9192805806
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Service Address: 6538 Simonis Spurs, KEISHALAND, CALIFORNIA 19674
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Facility Account: TG5348850
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Standing Order: 01-09-2026 to 01-12-2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Sending create order request...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Validation 1: Verifying status code
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Status code is 201 (Created)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Validation 2: Verifying response time
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Response time: 586 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Response time is acceptable: 586 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Validation 3: Verifying response message
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Response message: Standing order created successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Validation 4: Verifying order ID is generated
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Order ID generated: TGO-260108069
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Validation 5: Verifying response contains data object
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Response contains data object
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Validation 6: Verifying Content-Type header
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Content-Type: application/json; charset=utf-8
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          Validation 7: Verifying mandatory order fields
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Order type: MLX
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Facility account number: TG5348850
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:15 pm</td>
+        <td>
+          ✓ Physician NPI: 1093767972
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Billing type: CLIENT
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Validation 8: Verifying order codes
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Order codes validated: [RPP COVID19]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Validation 9: Verifying ICD-10 codes
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ ICD-10 codes validated: [A21.8, A04.9]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Validation 10: Verifying patient data
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Patient first name: Carlo
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Patient last name: Bailey
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Patient gender: FEMALE
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Patient email: carlo.bailey@test.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Validation 11: Verifying standing order details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Total orders created: 4
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Standing start date: 01-09-2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Standing end date: 01-12-2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Standing frequency: DAILY
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Service dates count: 4
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Validation 12: Verifying order status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Order status: ACTIVE
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Fasting: true
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Is stat: false
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          All mandatory fields validated successfully - Create Standing Order test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Order - Invalid Auth Token</p>
+            <p class="text-sm">
+              <span>6:38:16 pm</span> / <span>00:00:00:333</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create Order - Invalid Auth Token</h5>
+<span class='badge badge-success'>01.08.2026 6:38:16 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:16 pm</span>
+<span class='badge badge-default'>00:00:00:333</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that order creation fails with invalid auth token</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Sending request with invalid auth token...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Validation: Verifying status code indicates error
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Status code is 422 (Request rejected)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Invalid auth token test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Order - Missing Required Fields</p>
+            <p class="text-sm">
+              <span>6:38:16 pm</span> / <span>00:00:00:309</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create Order - Missing Required Fields</h5>
+<span class='badge badge-success'>01.08.2026 6:38:16 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:16 pm</span>
+<span class='badge badge-default'>00:00:00:309</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that order creation fails when required fields are missing</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Sending request with missing required fields...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Validation: Verifying status code indicates validation error
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          ✓ Status code is 422 (Bad Request/Validation Error)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Missing required fields test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Order - Invalid Date Format</p>
+            <p class="text-sm">
+              <span>6:38:16 pm</span> / <span>00:00:00:328</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create Order - Invalid Date Format</h5>
+<span class='badge badge-success'>01.08.2026 6:38:16 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:17 pm</span>
+<span class='badge badge-default'>00:00:00:328</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that order creation fails with invalid date format</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:16 pm</td>
+        <td>
+          Sending request with invalid date format...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Validation: Verifying request fails with invalid date
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          ✓ Invalid date format rejected with status code: 422
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Invalid date format test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Order - Past Date</p>
+            <p class="text-sm">
+              <span>6:38:17 pm</span> / <span>00:00:00:620</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Create Order - Past Date</h5>
+<span class='badge badge-success'>01.08.2026 6:38:17 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:17 pm</span>
+<span class='badge badge-default'>00:00:00:620</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that order creation fails when date of service is in the past</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Past Start Date: 12-29-2025
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Past End Date: 01-01-2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Past Service Date: 01-03-2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Sending request with PAST DATE - This should be rejected...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Response Status Code: 201
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Response Body: {"status":201,"success":true,"message":"Standing order created successfully","data":{"total_orders_created":4,"total_service_dates":4,"orders":[{"order_codes":["RPP COVID19"],"facility_account_number":"TG2133282","physician_npi":"1093767972","order_type":"MLX","order_id":"TGO-260108073","billing_type":"CLIENT","icd_10_codes":["A21.8"],"status":"ACTIVE","sample_collection_status":"PENDING","patient_info":{"first_name":"Guillermo","last_name":"Cole","gender":"MALE","date_of_birth":"08-23-1998","email":"guillermo.cole@test.com","mobile_number1":"9174307373","addresses":[{"address_line_1":"123 Test St","city":"Test City","state":"NEW YORK","zip":"12345"}],"race":"ASIAN","ethnicity":"ASIAN","homebound":false,"hardstick":false,"_id":"695fac41b514fd6939a1c05d","created_at":"2026-01-08T13:08:17.683Z","updated_at":"2026-01-08T13:08:17.683Z","__v":0},"is_stat":false,"order_placed_at":"2026-01-08T13:08:17.772Z","is_phlebo_order":true,"fasting":true,"phlebo_details":"695fac41b514fd6939a1c060","_id":"695fac41b514fd6939a1c063","created_at":"2026-01-08T13:08:17.773Z","updated_at":"2026-01-08T13:08:17.773Z","__v":0,"id":"695fac41b514fd6939a1c063","phlebo_order":{"phlebo_order_id":"MLX-260108073","test_data":[],"order_type":"STANDING ORDER","date_of_service":"12-29-2025","appointment_time":"","admin_notes":[],"attachments":[],"service_address":{"address_line_1":"123 Test St","city":"Test City","state":"NEW YORK","zip":"12345"},"services":["STOOL SPECIMEN PICKUP"],"reasons":[],"standing_start_date":"2025-12-29T00:00:00.000Z","standing_end_date":"2026-01-01T00:00:00.000Z","standing_frequency":"DAILY","technician_id":null,"phlebo_status_history":[{"technician_id":null,"tech_name":"","status":"PENDING","labtests_collected":[],"return_visit_tests":[],"reasons":[],"auto_drop_off":false,"created_at":"2026-01-08T13:08:17.758Z","tubes_collected":[]}],"patient_confirmation_status":"PENDING","service_latitude":40.7127753,"service_longitude":-74.0059728,"tube_data":[{"tube_name":"NASAL SWAB","tube_count":1}],"tat":"","_id":"695fac41b514fd6939a1c060","created_at":"2026-01-08T13:08:17.761Z","updated_at":"2026-01-08T13:08:17.761Z","__v":0},"service_date":"12-29-2025","mlx_order_id":"MLX-260108073"},{"order_codes":["RPP COVID19"],"facility_account_number":"TG2133282","physician_npi":"1093767972","order_type":"MLX","order_id":"TGO-260108074","billing_type":"CLIENT","icd_10_codes":["A21.8"],"status":"ACTIVE","sample_collection_status":"PENDING","patient_info":{"first_name":"Guillermo","last_name":"Cole","gender":"MALE","date_of_birth":"08-23-1998","email":"guillermo.cole@test.com","mobile_number1":"9174307373","addresses":[{"address_line_1":"123 Test St","city":"Test City","state":"NEW YORK","zip":"12345"}],"race":"ASIAN","ethnicity":"ASIAN","homebound":false,"hardstick":false,"_id":"695fac41b514fd6939a1c05d","created_at":"2026-01-08T13:08:17.683Z","updated_at":"2026-01-08T13:08:17.683Z","__v":0},"is_stat":false,"order_placed_at":"2026-01-08T13:08:17.798Z","is_phlebo_order":true,"fasting":true,"phlebo_details":"695fac41b514fd6939a1c066","_id":"695fac41b514fd6939a1c069","created_at":"2026-01-08T13:08:17.799Z","updated_at":"2026-01-08T13:08:17.799Z","__v":0,"id":"695fac41b514fd6939a1c069","phlebo_order":{"phlebo_order_id":"MLX-260108074","test_data":[],"order_type":"STANDING ORDER","date_of_service":"12-30-2025","appointment_time":"","admin_notes":[],"attachments":[],"service_address":{"address_line_1":"123 Test St","city":"Test City","state":"NEW YORK","zip":"12345"},"services":["STOOL SPECIMEN PICKUP"],"reasons":[],"standing_start_date":"2025-12-29T00:00:00.000Z","standing_end_date":"2026-01-01T00:00:00.000Z","standing_frequency":"DAILY","technician_id":null,"phlebo_status_history":[{"technician_id":null,"tech_name":"","status":"PENDING","labtests_collected":[],"return_visit_tests":[],"reasons":[],"auto_drop_off":false,"created_at":"2026-01-08T13:08:17.783Z","tubes_collected":[]}],"patient_confirmation_status":"PENDING","service_latitude":40.7127753,"service_longitude":-74.0059728,"tube_data":[{"tube_name":"NASAL SWAB","tube_count":1}],"tat":"","_id":"695fac41b514fd6939a1c066","created_at":"2026-01-08T13:08:17.786Z","updated_at":"2026-01-08T13:08:17.786Z","__v":0},"service_date":"12-30-2025","mlx_order_id":"MLX-260108074"},{"order_codes":["RPP COVID19"],"facility_account_number":"TG2133282","physician_npi":"1093767972","order_type":"MLX","order_id":"TGO-260108075","billing_type":"CLIENT","icd_10_codes":["A21.8"],"status":"ACTIVE","sample_collection_status":"PENDING","patient_info":{"first_name":"Guillermo","last_name":"Cole","gender":"MALE","date_of_birth":"08-23-1998","email":"guillermo.cole@test.com","mobile_number1":"9174307373","addresses":[{"address_line_1":"123 Test St","city":"Test City","state":"NEW YORK","zip":"12345"}],"race":"ASIAN","ethnicity":"ASIAN","homebound":false,"hardstick":false,"_id":"695fac41b514fd6939a1c05d","created_at":"2026-01-08T13:08:17.683Z","updated_at":"2026-01-08T13:08:17.683Z","__v":0},"is_stat":false,"order_placed_at":"2026-01-08T13:08:17.822Z","is_phlebo_order":true,"fasting":true,"phlebo_details":"695fac41b514fd6939a1c06c","_id":"695fac41b514fd6939a1c06f","created_at":"2026-01-08T13:08:17.823Z","updated_at":"2026-01-08T13:08:17.823Z","__v":0,"id":"695fac41b514fd6939a1c06f","phlebo_order":{"phlebo_order_id":"MLX-260108075","test_data":[],"order_type":"STANDING ORDER","date_of_service":"12-31-2025","appointment_time":"","admin_notes":[],"attachments":[],"service_address":{"address_line_1":"123 Test St","city":"Test City","state":"NEW YORK","zip":"12345"},"services":["STOOL SPECIMEN PICKUP"],"reasons":[],"standing_start_date":"2025-12-29T00:00:00.000Z","standing_end_date":"2026-01-01T00:00:00.000Z","standing_frequency":"DAILY","technician_id":null,"phlebo_status_history":[{"technician_id":null,"tech_name":"","status":"PENDING","labtests_collected":[],"return_visit_tests":[],"reasons":[],"auto_drop_off":false,"created_at":"2026-01-08T13:08:17.809Z","tubes_collected":[]}],"patient_confirmation_status":"PENDING","service_latitude":40.7127753,"service_longitude":-74.0059728,"tube_data":[{"tube_name":"NASAL SWAB","tube_count":1}],"tat":"","_id":"695fac41b514fd6939a1c06c","created_at":"2026-01-08T13:08:17.812Z","updated_at":"2026-01-08T13:08:17.812Z","__v":0},"service_date":"12-31-2025","mlx_order_id":"MLX-260108075"},{"order_codes":["RPP COVID19"],"facility_account_number":"TG2133282","physician_npi":"1093767972","order_type":"MLX","order_id":"TGO-260108076","billing_type":"CLIENT","icd_10_codes":["A21.8"],"status":"ACTIVE","sample_collection_status":"PENDING","patient_info":{"first_name":"Guillermo","last_name":"Cole","gender":"MALE","date_of_birth":"08-23-1998","email":"guillermo.cole@test.com","mobile_number1":"9174307373","addresses":[{"address_line_1":"123 Test St","city":"Test City","state":"NEW YORK","zip":"12345"}],"race":"ASIAN","ethnicity":"ASIAN","homebound":false,"hardstick":false,"_id":"695fac41b514fd6939a1c05d","created_at":"2026-01-08T13:08:17.683Z","updated_at":"2026-01-08T13:08:17.683Z","__v":0},"is_stat":false,"order_placed_at":"2026-01-08T13:08:17.847Z","is_phlebo_order":true,"fasting":true,"phlebo_details":"695fac41b514fd6939a1c072","_id":"695fac41b514fd6939a1c075","created_at":"2026-01-08T13:08:17.848Z","updated_at":"2026-01-08T13:08:17.848Z","__v":0,"id":"695fac41b514fd6939a1c075","phlebo_order":{"phlebo_order_id":"MLX-260108076","test_data":[],"order_type":"STANDING ORDER","date_of_service":"01-01-2026","appointment_time":"","admin_notes":[],"attachments":[],"service_address":{"address_line_1":"123 Test St","city":"Test City","state":"NEW YORK","zip":"12345"},"services":["STOOL SPECIMEN PICKUP"],"reasons":[],"standing_start_date":"2025-12-29T00:00:00.000Z","standing_end_date":"2026-01-01T00:00:00.000Z","standing_frequency":"DAILY","technician_id":null,"phlebo_status_history":[{"technician_id":null,"tech_name":"","status":"PENDING","labtests_collected":[],"return_visit_tests":[],"reasons":[],"auto_drop_off":false,"created_at":"2026-01-08T13:08:17.834Z","tubes_collected":[]}],"patient_confirmation_status":"PENDING","service_latitude":40.7127753,"service_longitude":-74.0059728,"tube_data":[{"tube_name":"NASAL SWAB","tube_count":1}],"tat":"","_id":"695fac41b514fd6939a1c072","created_at":"2026-01-08T13:08:17.837Z","updated_at":"2026-01-08T13:08:17.837Z","__v":0},"service_date":"01-01-2026","mlx_order_id":"MLX-260108076"}],"patient_id":"695fac41b514fd6939a1c05d","standing_order_details":{"start_date":"12-29-2025","end_date":"01-01-2026","frequency":"DAILY","service_dates":["12-29-2025","12-30-2025","12-31-2025","01-01-2026"]}}}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Validation 1: Verifying past date is rejected
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          ❌ FAILED: API ACCEPTED past dates when it should reject them!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Status Code: 201 (Expected: 400 or 422)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          The API created orders with past dates:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          - Start Date: 12-29-2025 (PAST)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          - End Date: 01-01-2026 (PAST)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          - Service Date: 01-03-2026 (PAST)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Orders created: 4
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Order 1: TGO-260108073 (Service Date: 12-29-2025)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Order 2: TGO-260108074 (Service Date: 12-30-2025)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Order 3: TGO-260108075 (Service Date: 12-31-2025)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Order 4: TGO-260108076 (Service Date: 01-01-2026)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          ❌ ASSERTION FAILED: API should reject orders with past dates but it accepted them with status 201
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Order - Far Future Date</p>
+            <p class="text-sm">
+              <span>6:38:17 pm</span> / <span>00:00:00:765</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create Order - Far Future Date</h5>
+<span class='badge badge-success'>01.08.2026 6:38:17 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:18 pm</span>
+<span class='badge badge-default'>00:00:00:765</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that order creation fails when date is too far in the future</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Far Future Start Date: 01-08-2027
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Far Future Service Date: 01-13-2027
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:17 pm</td>
+        <td>
+          Sending request with FAR FUTURE DATE...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:18 pm</td>
+        <td>
+          Validation: Checking if far future date is handled
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:18 pm</td>
+        <td>
+          Status Code: 201
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:18 pm</td>
+        <td>
+          Note: Far future date was accepted - may be valid business rule
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:18 pm</td>
+        <td>
+          Far future date test completed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Order - Invalid ICD-10 Codes</p>
+            <p class="text-sm">
+              <span>6:38:18 pm</span> / <span>00:00:00:959</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create Order - Invalid ICD-10 Codes</h5>
+<span class='badge badge-success'>01.08.2026 6:38:18 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:19 pm</span>
+<span class='badge badge-default'>00:00:00:959</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that order creation handles invalid ICD-10 codes appropriately</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:18 pm</td>
+        <td>
+          Invalid ICD-10 Codes: [INVALID123, ZZZZZ, 99999]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:18 pm</td>
+        <td>
+          Sending request with INVALID ICD-10 codes...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:19 pm</td>
+        <td>
+          Status Code: 201
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:19 pm</td>
+        <td>
+          Note: Invalid ICD-10 codes were accepted - validation may not be enforced
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:19 pm</td>
+        <td>
+          Invalid ICD-10 codes test completed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Order - Invalid Facility Account</p>
+            <p class="text-sm">
+              <span>6:38:19 pm</span> / <span>00:00:00:549</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create Order - Invalid Facility Account</h5>
+<span class='badge badge-success'>01.08.2026 6:38:19 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:20 pm</span>
+<span class='badge badge-default'>00:00:00:549</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that order creation fails with invalid facility account number</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:19 pm</td>
+        <td>
+          Invalid Facility Account: INVALID_FACILITY_12345
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:19 pm</td>
+        <td>
+          Sending request with INVALID FACILITY ACCOUNT...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:20 pm</td>
+        <td>
+          Status Code: 201
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:20 pm</td>
+        <td>
+          Note: Invalid facility was accepted - validation may not be enforced
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:20 pm</td>
+        <td>
+          Invalid facility account test completed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Create Order - Invalid Physician NPI</p>
+            <p class="text-sm">
+              <span>6:38:20 pm</span> / <span>00:00:00:649</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Create Order - Invalid Physician NPI</h5>
+<span class='badge badge-success'>01.08.2026 6:38:20 pm</span>
+<span class='badge badge-danger'>01.08.2026 6:38:20 pm</span>
+<span class='badge badge-default'>00:00:00:649</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify that order creation handles invalid physician NPI appropriately</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:20 pm</td>
+        <td>
+          Invalid Physician NPI: INVALID_NPI_12345
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:20 pm</td>
+        <td>
+          Sending request with INVALID PHYSICIAN NPI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:20 pm</td>
+        <td>
+          Status Code: 201
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:38:20 pm</td>
+        <td>
+          Note: Invalid NPI was accepted - validation may not be enforced
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:38:20 pm</td>
+        <td>
+          Invalid physician NPI test completed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jan 08, 2026 18:38:11</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jan 08, 2026 18:38:20</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>8</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='88%'>
+<b>8</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='11%'><b>1</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='34%'><b>35</b> events passed</small></div>
+<div>
+<small data-tooltip='11%'><b>12</b> events failed,
+<b data-tooltip='%'>54</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Create Standing Order - Valid Data":1.169,"Create Order - Invalid Auth Token":0.333,"Create Order - Missing Required Fields":0.309,"Create Order - Invalid Date Format":0.328,"Create Order - Past Date":0.62,"Create Order - Far Future Date":0.765,"Create Order - Invalid ICD-10 Codes":0.959,"Create Order - Invalid Facility Account":0.549,"Create Order - Invalid Physician NPI":0.649
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Application</td>
+<td>Mobile Lab Express (MLX)</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>Staging</td>
+</tr>
+<tr>
+<td>Base URL</td>
+<td>https://staging-api-mlx.labsquire.com</td>
+</tr>
+<tr>
+<td>Test Module</td>
+<td>Order Creation API</td>
+</tr>
+<tr>
+<td>Framework</td>
+<td>RestAssured + TestNG</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>Java Version</td>
+<td>25.0.1</td>
+</tr>
+<tr>
+<td>User</td>
+<td>VIJAY</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 8,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 35,
+failEvents: 12,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 54
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

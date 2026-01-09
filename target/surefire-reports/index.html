@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" class="navigator-link">
+              <span class="suite-name border-failed">MLX API Automation Test Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-MLX_API_Automation_Test_Suite" class="navigator-link ">
+                    <span>C:\Users\VIJAY\eclipse-workspace\MLX_API_Automation\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-MLX_API_Automation_Test_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-MLX_API_Automation_Test_Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-MLX_API_Automation_Test_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-MLX_API_Automation_Test_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-MLX_API_Automation_Test_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-MLX_API_Automation_Test_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">18 methods, 3 failed,   15 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" class="hide-methods failed suite-MLX_API_Automation_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-MLX_API_Automation_Test_Suite -->
+                      <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" class="show-methods failed suite-MLX_API_Automation_Test_Suite"> (show)</a> <!-- show-methods failed suite-MLX_API_Automation_Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-MLX_API_Automation_Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithPastDate">testCreateOrderWithPastDate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutFacilityAccount">testCreateOrderWithoutFacilityAccount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutPhysicianNPI">testCreateOrderWithoutPhysicianNPI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-MLX_API_Automation_Test_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" class="hide-methods passed suite-MLX_API_Automation_Test_Suite"> (hide)</a> <!-- hide-methods passed suite-MLX_API_Automation_Test_Suite -->
+                      <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" class="show-methods passed suite-MLX_API_Automation_Test_Suite"> (show)</a> <!-- show-methods passed suite-MLX_API_Automation_Test_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-MLX_API_Automation_Test_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithFarFutureDate">testCreateOrderWithFarFutureDate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithInvalidAuthToken">testCreateOrderWithInvalidAuthToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithInvalidDateFormat">testCreateOrderWithInvalidDateFormat</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithInvalidFacility">testCreateOrderWithInvalidFacility</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithInvalidICD10">testCreateOrderWithInvalidICD10</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithInvalidNPI">testCreateOrderWithInvalidNPI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithMissingRequiredFields">testCreateOrderWithMissingRequiredFields</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutBillingType">testCreateOrderWithoutBillingType</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutDateOfService">testCreateOrderWithoutDateOfService</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutICD10Codes">testCreateOrderWithoutICD10Codes</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutOrderCodes">testCreateOrderWithoutOrderCodes</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutPatientData">testCreateOrderWithoutPatientData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutServices">testCreateOrderWithoutServices</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateOrderWithoutTubeData">testCreateOrderWithoutTubeData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MLX_API_Automation_Test_Suite" title="com.mlx.api.tests.MLXCreateOrderTest" class="method navigator-link" hash-for-method="testCreateStandingOrderWithValidData">testCreateStandingOrderWithValidData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-MLX_API_Automation_Test_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-MLX_API_Automation_Test_Suite" class="panel MLX_API_Automation_Test_Suite">
+          <div class="suite-MLX_API_Automation_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.mlx.api.tests.MLXCreateOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithPastDate">
+                  </a> <!-- testCreateOrderWithPastDate -->
+                  <span class="method-name">testCreateOrderWithPastDate</span>
+                  <div class="stack-trace">java.lang.AssertionError: API should reject orders with past dates but it accepted them with status 201
+	at com.mlx.api.tests.MLXCreateOrderTest.testCreateOrderWithPastDate(MLXCreateOrderTest.java:604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Create Order - Past Date (Negative Test))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutFacilityAccount">
+                  </a> <!-- testCreateOrderWithoutFacilityAccount -->
+                  <span class="method-name">testCreateOrderWithoutFacilityAccount</span>
+                  <div class="stack-trace">java.lang.AssertionError: API should reject request when facility_account_number is missing expected [true] but found [false]
+	at com.mlx.api.tests.MLXCreateOrderTest.testCreateOrderWithoutFacilityAccount(MLXCreateOrderTest.java:983)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Missing Facility Account Number - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutPhysicianNPI">
+                  </a> <!-- testCreateOrderWithoutPhysicianNPI -->
+                  <span class="method-name">testCreateOrderWithoutPhysicianNPI</span>
+                  <div class="stack-trace">java.lang.AssertionError: API should reject request when physician_npi is missing expected [true] but found [false]
+	at com.mlx.api.tests.MLXCreateOrderTest.testCreateOrderWithoutPhysicianNPI(MLXCreateOrderTest.java:1023)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Missing Physician NPI - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MLX_API_Automation_Test_Suite-class-failed -->
+          <div class="suite-MLX_API_Automation_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mlx.api.tests.MLXCreateOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithFarFutureDate">
+                  </a> <!-- testCreateOrderWithFarFutureDate -->
+                  <span class="method-name">testCreateOrderWithFarFutureDate</span>
+                  <em>
+(Create Order - Future Date Beyond Range (Negative Test))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithInvalidAuthToken">
+                  </a> <!-- testCreateOrderWithInvalidAuthToken -->
+                  <span class="method-name">testCreateOrderWithInvalidAuthToken</span>
+                  <em>
+(Create Order - Invalid Auth Token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithInvalidDateFormat">
+                  </a> <!-- testCreateOrderWithInvalidDateFormat -->
+                  <span class="method-name">testCreateOrderWithInvalidDateFormat</span>
+                  <em>
+(Create Order - Invalid Date Format)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithInvalidFacility">
+                  </a> <!-- testCreateOrderWithInvalidFacility -->
+                  <span class="method-name">testCreateOrderWithInvalidFacility</span>
+                  <em>
+(Create Order - Invalid Facility Account (Negative Test))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithInvalidICD10">
+                  </a> <!-- testCreateOrderWithInvalidICD10 -->
+                  <span class="method-name">testCreateOrderWithInvalidICD10</span>
+                  <em>
+(Create Order - Invalid ICD-10 Codes (Negative Test))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithInvalidNPI">
+                  </a> <!-- testCreateOrderWithInvalidNPI -->
+                  <span class="method-name">testCreateOrderWithInvalidNPI</span>
+                  <em>
+(Create Order - Invalid Physician NPI (Negative Test))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithMissingRequiredFields">
+                  </a> <!-- testCreateOrderWithMissingRequiredFields -->
+                  <span class="method-name">testCreateOrderWithMissingRequiredFields</span>
+                  <em>
+(Create Order - Missing Required Fields)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutBillingType">
+                  </a> <!-- testCreateOrderWithoutBillingType -->
+                  <span class="method-name">testCreateOrderWithoutBillingType</span>
+                  <em>
+(Missing Billing Type - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutDateOfService">
+                  </a> <!-- testCreateOrderWithoutDateOfService -->
+                  <span class="method-name">testCreateOrderWithoutDateOfService</span>
+                  <em>
+(Missing Date of Service - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutICD10Codes">
+                  </a> <!-- testCreateOrderWithoutICD10Codes -->
+                  <span class="method-name">testCreateOrderWithoutICD10Codes</span>
+                  <em>
+(Missing ICD-10 Codes - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutOrderCodes">
+                  </a> <!-- testCreateOrderWithoutOrderCodes -->
+                  <span class="method-name">testCreateOrderWithoutOrderCodes</span>
+                  <em>
+(Missing Order Codes - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutPatientData">
+                  </a> <!-- testCreateOrderWithoutPatientData -->
+                  <span class="method-name">testCreateOrderWithoutPatientData</span>
+                  <em>
+(Missing Patient Data - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutServices">
+                  </a> <!-- testCreateOrderWithoutServices -->
+                  <span class="method-name">testCreateOrderWithoutServices</span>
+                  <em>
+(Missing Services - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateOrderWithoutTubeData">
+                  </a> <!-- testCreateOrderWithoutTubeData -->
+                  <span class="method-name">testCreateOrderWithoutTubeData</span>
+                  <em>
+(Missing Tube Data - Negative Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateStandingOrderWithValidData">
+                  </a> <!-- testCreateStandingOrderWithValidData -->
+                  <span class="method-name">testCreateStandingOrderWithValidData</span>
+                  <em>
+(Create Standing Order - Valid Data)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MLX_API_Automation_Test_Suite-class-passed -->
+        </div> <!-- panel MLX_API_Automation_Test_Suite -->
+        <div panel-name="test-xml-MLX_API_Automation_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\VIJAY\eclipse-workspace\MLX_API_Automation\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;MLX API Automation Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;MLX Order Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.mlx.api.tests.MLXCreateOrderTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- MLX Order Tests --&gt;
+&lt;/suite&gt; &lt;!-- MLX API Automation Test Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-MLX_API_Automation_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for MLX API Automation Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">MLX Order Tests (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-MLX_API_Automation_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for MLX API Automation Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-MLX_API_Automation_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for MLX API Automation Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_MLX_API_Automation_Test_Suite');
+function tableData_MLX_API_Automation_Test_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(18);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testCreateStandingOrderWithValidData')
+data.setCell(0, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(0, 3, 1269);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testCreateOrderWithInvalidICD10')
+data.setCell(1, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(1, 3, 953);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testCreateOrderWithFarFutureDate')
+data.setCell(2, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(2, 3, 786);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testCreateOrderWithInvalidNPI')
+data.setCell(3, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(3, 3, 678);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testCreateOrderWithPastDate')
+data.setCell(4, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(4, 3, 595);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testCreateOrderWithInvalidFacility')
+data.setCell(5, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(5, 3, 495);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testCreateOrderWithInvalidAuthToken')
+data.setCell(6, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(6, 3, 329);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testCreateOrderWithMissingRequiredFields')
+data.setCell(7, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(7, 3, 318);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testCreateOrderWithoutPhysicianNPI')
+data.setCell(8, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(8, 3, 316);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testCreateOrderWithoutServices')
+data.setCell(9, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(9, 3, 314);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testCreateOrderWithoutICD10Codes')
+data.setCell(10, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(10, 3, 312);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testCreateOrderWithoutDateOfService')
+data.setCell(11, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(11, 3, 304);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testCreateOrderWithInvalidDateFormat')
+data.setCell(12, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(12, 3, 303);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testCreateOrderWithoutFacilityAccount')
+data.setCell(13, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(13, 3, 303);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testCreateOrderWithoutBillingType')
+data.setCell(14, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(14, 3, 300);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testCreateOrderWithoutTubeData')
+data.setCell(15, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(15, 3, 295);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'testCreateOrderWithoutPatientData')
+data.setCell(16, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(16, 3, 295);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'testCreateOrderWithoutOrderCodes')
+data.setCell(17, 2, 'com.mlx.api.tests.MLXCreateOrderTest')
+data.setCell(17, 3, 295);
+window.suiteTableData['MLX_API_Automation_Test_Suite']= { tableData: data, tableDiv: 'times-div-MLX_API_Automation_Test_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <div id="times-div-MLX_API_Automation_Test_Suite">
+              </div> <!-- times-div-MLX_API_Automation_Test_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-MLX_API_Automation_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for MLX API Automation Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-MLX_API_Automation_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-MLX_API_Automation_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mlx.api.tests.MLXCreateOrderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testCreateStandingOrderWithValidData</span>
+                <span class="method-start">4394 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithInvalidAuthToken</span>
+                <span class="method-start">5667 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithMissingRequiredFields</span>
+                <span class="method-start">5997 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithInvalidDateFormat</span>
+                <span class="method-start">6316 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testCreateOrderWithPastDate</span>
+                <span class="method-start">6620 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithFarFutureDate</span>
+                <span class="method-start">7217 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithInvalidICD10</span>
+                <span class="method-start">8004 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithInvalidFacility</span>
+                <span class="method-start">8959 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithInvalidNPI</span>
+                <span class="method-start">9455 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithoutPatientData</span>
+                <span class="method-start">10134 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testCreateOrderWithoutFacilityAccount</span>
+                <span class="method-start">10430 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testCreateOrderWithoutPhysicianNPI</span>
+                <span class="method-start">10734 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithoutOrderCodes</span>
+                <span class="method-start">11050 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithoutServices</span>
+                <span class="method-start">11345 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithoutICD10Codes</span>
+                <span class="method-start">11661 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithoutBillingType</span>
+                <span class="method-start">11973 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithoutDateOfService</span>
+                <span class="method-start">12274 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateOrderWithoutTubeData</span>
+                <span class="method-start">12579 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">12875 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

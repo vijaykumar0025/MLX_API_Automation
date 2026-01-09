@@ -1,0 +1,7 @@
+com\mlx\api\pages\BasePage.class
+com\mlx\api\utils\ExtentReportManager.class
+com\mlx\api\utils\ConfigReader.class
+com\mlx\api\pages\MLXLoginPage.class
+com\mlx\api\utils\TestListener.class
+com\mlx\api\pages\MLXOrderPage.class
+com\mlx\api\pages\GetUserPage.class
