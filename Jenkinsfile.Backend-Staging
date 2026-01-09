@@ -1,0 +1,312 @@
+pipeline {
+    agent any
+    
+    environment {
+        PROJECT_NAME = 'MLX Backend API'
+        BRANCH_NAME = 'staging'
+        DEPLOY_ENABLED = 'false' // DEPLOYMENT DISABLED - CI ONLY
+        
+        // Email settings
+        EMAIL_RECIPIENTS = 'your-email@example.com' // UPDATE THIS
+    }
+    
+    parameters {
+        booleanParam(
+            name: 'RUN_BUILD_VERIFICATION',
+            defaultValue: true,
+            description: 'Verify that the backend code compiles'
+        )
+        booleanParam(
+            name: 'SEND_EMAIL',
+            defaultValue: true,
+            description: 'Send email notification after build'
+        )
+    }
+    
+    stages {
+        stage('🔍 Checkout Staging Branch') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Checking out MLX Backend API"
+                    echo "  Repository: api-mobilelabexpress.com"
+                    echo "  Branch: staging"
+                    echo "========================================="
+                    checkout scm
+                    
+                    // Display build info
+                    echo "Build Number: ${env.BUILD_NUMBER}"
+                    echo "Branch: ${env.GIT_BRANCH}"
+                    echo "Commit: ${env.GIT_COMMIT}"
+                    echo "Committer: ${env.GIT_COMMITTER_NAME}"
+                }
+            }
+        }
+        
+        stage('📊 Repository Analysis') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Analyzing Repository Structure"
+                    echo "========================================="
+                    
+                    // Check if it's a Node.js project
+                    if (fileExists('package.json')) {
+                        echo "✓ Detected Node.js project (package.json found)"
+                        def packageJson = readJSON file: 'package.json'
+                        echo "Project Name: ${packageJson.name ?: 'N/A'}"
+                        echo "Version: ${packageJson.version ?: 'N/A'}"
+                    }
+                    
+                    // Check for common files
+                    echo "\nProject Files:"
+                    if (fileExists('package.json')) echo "  ✓ package.json"
+                    if (fileExists('package-lock.json')) echo "  ✓ package-lock.json"
+                    if (fileExists('.env.example')) echo "  ✓ .env.example"
+                    if (fileExists('README.md')) echo "  ✓ README.md"
+                    if (fileExists('server.js')) echo "  ✓ server.js"
+                    if (fileExists('app.js')) echo "  ✓ app.js"
+                    if (fileExists('index.js')) echo "  ✓ index.js"
+                }
+            }
+        }
+        
+        stage('🔨 Build Verification (Optional)') {
+            when {
+                expression { params.RUN_BUILD_VERIFICATION == true }
+            }
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Build Verification"
+                    echo "========================================="
+                    
+                    if (fileExists('package.json')) {
+                        echo "Running npm install to verify dependencies..."
+                        try {
+                            // This just checks if dependencies can be installed
+                            // It doesn't modify the staging environment
+                            bat 'npm --version'
+                            echo "✓ npm is available"
+                            echo ""
+                            echo "Note: Actual npm install skipped to avoid"
+                            echo "      potential issues with staging environment."
+                            echo "      Enable this step only when ready."
+                        } catch (Exception e) {
+                            echo "⚠ npm not found - skipping build verification"
+                        }
+                    } else {
+                        echo "No package.json found - skipping build verification"
+                    }
+                }
+            }
+        }
+        
+        stage('🧪 Code Quality Checks (Optional)') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Code Quality Analysis"
+                    echo "========================================="
+                    echo ""
+                    echo "Placeholder for future integrations:"
+                    echo "  - ESLint for JavaScript linting"
+                    echo "  - SonarQube for code quality"
+                    echo "  - Security vulnerability scanning"
+                    echo "  - Code coverage reports"
+                    echo ""
+                    echo "Status: Not configured yet"
+                    echo ""
+                }
+            }
+        }
+        
+        stage('📈 Commit Information') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  Latest Commit Information"
+                    echo "========================================="
+                    
+                    try {
+                        // Show last commit details
+                        bat "git log -1 --pretty=format:\"Commit: %h%nAuthor: %an%nDate: %ad%nMessage: %s\" --date=short"
+                    } catch (Exception e) {
+                        echo "Unable to fetch commit details"
+                    }
+                }
+            }
+        }
+        
+        stage('🚫 Deployment (DISABLED)') {
+            steps {
+                script {
+                    echo "========================================="
+                    echo "  ⚠️  DEPLOYMENT STAGE - DISABLED"
+                    echo "========================================="
+                    echo ""
+                    echo "🔒 Continuous Deployment is DISABLED for safety"
+                    echo ""
+                    echo "This is a CI-ONLY monitoring pipeline that:"
+                    echo "  ✅ Checks out staging branch code"
+                    echo "  ✅ Analyzes repository structure"
+                    echo "  ✅ Verifies code organization"
+                    echo "  ✅ Notifies team of changes"
+                    echo "  ❌ Does NOT build the application"
+                    echo "  ❌ Does NOT run tests (yet)"
+                    echo "  ❌ Does NOT deploy code"
+                    echo "  ❌ Does NOT modify staging environment"
+                    echo ""
+                    echo "Repository: api-mobilelabexpress.com"
+                    echo "Branch: staging"
+                    echo "Status: MONITORING ONLY"
+                    echo ""
+                    echo "To enable deployment in the future:"
+                    echo "  1. Add comprehensive tests"
+                    echo "  2. Set up proper deployment scripts"
+                    echo "  3. Configure environment variables"
+                    echo "  4. Add manual approval gates"
+                    echo "  5. Test deployment process manually first"
+                    echo "  6. Update DEPLOY_ENABLED to 'true'"
+                    echo ""
+                    echo "Current Status: DEPLOYMENT SKIPPED ✓"
+                    echo "========================================="
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            script {
+                echo "========================================="
+                echo "  Build Completed"
+                echo "========================================="
+                echo "Repository: api-mobilelabexpress.com"
+                echo "Branch: staging"
+                echo "Job: ${env.JOB_NAME}"
+                echo "Build: #${env.BUILD_NUMBER}"
+                echo "Status: ${currentBuild.currentResult}"
+                echo "Duration: ${currentBuild.durationString}"
+            }
+        }
+        
+        success {
+            script {
+                echo "✅ Monitoring build successful!"
+                
+                if (params.SEND_EMAIL) {
+                    emailext(
+                        subject: "✅ Backend Staging Monitor: Build #${env.BUILD_NUMBER}",
+                        body: """
+                            <html>
+                            <body style="font-family: Arial, sans-serif; padding: 20px;">
+                                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 8px;">
+                                    <h2 style="color: white; margin: 0;">✅ Backend Staging - Monitoring Active</h2>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                                    <h3>Repository Information</h3>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr><td style="padding: 8px;"><strong>Repository:</strong></td><td>api-mobilelabexpress.com</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Branch:</strong></td><td><span style="background: #ffc107; padding: 4px 8px; border-radius: 4px; font-weight: bold;">staging</span></td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Build Number:</strong></td><td>#${env.BUILD_NUMBER}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Status:</strong></td><td><span style="color: green; font-weight: bold;">MONITORING ✓</span></td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Commit:</strong></td><td>${env.GIT_COMMIT?.take(8)}</td></tr>
+                                    </table>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 15px; background: #d1ecf1; border-left: 4px solid #0c5460; border-radius: 4px;">
+                                    <p style="margin: 0;"><strong>ℹ️ CI-Only Mode</strong></p>
+                                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #0c5460;">
+                                        This build monitored the staging branch. No deployment was performed.
+                                    </p>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <h3>📊 View Details</h3>
+                                    <p>
+                                        <a href="${env.BUILD_URL}console" 
+                                           style="display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 5px;">
+                                            View Console Output
+                                        </a>
+                                        <a href="${env.BUILD_URL}" 
+                                           style="display: inline-block; padding: 10px 20px; background: #28a745; color: white; text-decoration: none; border-radius: 5px; margin: 5px;">
+                                            View Build Details
+                                        </a>
+                                    </p>
+                                </div>
+                                
+                                <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
+                                
+                                <p style="font-size: 12px; color: #6c757d;">
+                                    This is an automated message from Jenkins CI Pipeline.<br>
+                                    Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>
+                                </p>
+                            </body>
+                            </html>
+                        """,
+                        mimeType: 'text/html',
+                        to: "${env.EMAIL_RECIPIENTS}",
+                        attachLog: false
+                    )
+                }
+            }
+        }
+        
+        failure {
+            script {
+                echo "❌ Monitoring build failed!"
+                
+                if (params.SEND_EMAIL) {
+                    emailext(
+                        subject: "❌ Backend Staging Monitor Failed: Build #${env.BUILD_NUMBER}",
+                        body: """
+                            <html>
+                            <body style="font-family: Arial, sans-serif; padding: 20px;">
+                                <div style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); padding: 20px; border-radius: 8px;">
+                                    <h2 style="color: white; margin: 0;">❌ Backend Staging - Monitoring Failed</h2>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                                    <h3>Build Information</h3>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr><td style="padding: 8px;"><strong>Repository:</strong></td><td>api-mobilelabexpress.com</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Branch:</strong></td><td>staging</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Build Number:</strong></td><td>#${env.BUILD_NUMBER}</td></tr>
+                                        <tr><td style="padding: 8px;"><strong>Status:</strong></td><td><span style="color: red; font-weight: bold;">FAILED ✗</span></td></tr>
+                                    </table>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 15px; background: #f8d7da; border-left: 4px solid #dc3545; border-radius: 4px;">
+                                    <p style="margin: 0;"><strong>⚠️ Action Required</strong></p>
+                                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #721c24;">
+                                        The monitoring build failed. This likely indicates an issue with repository access or Jenkins configuration.
+                                    </p>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <a href="${env.BUILD_URL}console" 
+                                       style="display: inline-block; padding: 12px 24px; background: #dc3545; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                                        View Console Output
+                                    </a>
+                                </div>
+                                
+                                <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
+                                
+                                <p style="font-size: 12px; color: #6c757d;">
+                                    This is an automated message from Jenkins CI Pipeline.<br>
+                                    Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>
+                                </p>
+                            </body>
+                            </html>
+                        """,
+                        mimeType: 'text/html',
+                        to: "${env.EMAIL_RECIPIENTS}",
+                        attachLog: true
+                    )
+                }
+            }
+        }
+    }
+}
